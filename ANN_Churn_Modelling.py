@@ -70,7 +70,7 @@ classifier.add(Dense(units=6, kernel_initializer = 'he_uniform', activation = 'r
 classifier.add(Dense(units = 1, init = 'glorot_uniform', activation = 'sigmoid'))
 
 # Compiling the ANN
-classifier.compile(optimizer='Adamax', loss='binary_crossentropy', metrics=['Accuracy'])
+classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['Accuracy'])
 
 # Fitting the ANN to the Training set
 Model = classifier.fit(X_train, y_train,validation_split=0.33, batch_size = 10, nb_epoch = 100)
