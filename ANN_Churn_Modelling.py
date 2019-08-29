@@ -61,13 +61,13 @@ from keras.layers import Dropout
 classifier = Sequential()
 
 # Adding the input layer and the first hidden layer
-classifier.add(Dense(output_dim=6, init = 'he_uniform', activation = 'relu', input_dim=11))
+classifier.add(Dense(units=6, kernel_initializer = 'he_uniform', activation = 'relu', input_dim=11))
 
 # Adding the second hidden layer
-classifier.add(Dense(output_dim=6, init = 'he_uniform', activation = 'relu'))
+classifier.add(Dense(units=6, kernel_initializer = 'he_uniform', activation = 'relu'))
 
 # Adding the output layer
-classifier.add(Dense(output_dim = 1, init = 'glorot_uniform', activation = 'sigmoid'))
+classifier.add(Dense(units = 1, init = 'glorot_uniform', activation = 'sigmoid'))
 
 # Compiling the ANN
 classifier.compile(optimizer='Adamax', loss='binary_crossentropy', metrics=['Accuracy'])
@@ -77,10 +77,10 @@ Model = classifier.fit(X_train, y_train,validation_split=0.33, batch_size = 10, 
 
 # list all data in history
 
-print(model_history.history.keys())
+print(Model.history.keys())
 # summarize history for accuracy
-plt.plot(model_history.history['acc'])
-plt.plot(model_history.history['val_acc'])
+plt.plot(Model.history['acc'])
+plt.plot(Model.history['val_acc'])
 plt.title('model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
@@ -88,8 +88,8 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.show()
 
 # summarize history for loss
-plt.plot(model_history.history['loss'])
-plt.plot(model_history.history['val_loss'])
+plt.plot(Model.history['loss'])
+plt.plot(Model.history['val_loss'])
 plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
