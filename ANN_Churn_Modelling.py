@@ -1,8 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 29 
 
-# In[ ]:
-
+@author: ramj_
+"""
 
 # Artificial Neural Network
 
@@ -13,10 +14,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-
-
-# In[ ]:
-
 
 # Importing the dataset
 dataset = pd.read_csv("C:\Ram Folders\Python\Data\Complete-Deep-Learning-master\ANN\Churn_Modelling.csv")
@@ -42,9 +39,6 @@ X_train = stdscalar.fit_transform(X_train)
 X_test = stdscalar.transform(X_test)
 
 
-# In[ ]:
-
-
 # Create ANN
 # Importing the Keras libraries and packages
 import keras
@@ -52,9 +46,6 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LeakyReLU,PReLU,ELU
 from keras.layers import Dropout
-
-
-# In[ ]:
 
 
 # Initialising the ANN
@@ -109,10 +100,6 @@ cm = confusion_matrix(y_test, y_pred)
 # Calculate the Accuracy
 from sklearn.metrics import accuracy_score
 score=accuracy_score(y_pred,y_test)
-
-
-# In[ ]:
-
 
 
 
