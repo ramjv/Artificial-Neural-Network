@@ -16,7 +16,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Importing the dataset
-dataset = pd.read_csv("C:\Ram Folders\Python\Data\Complete-Deep-Learning-master\ANN\Churn_Modelling.csv")
+dataset = pd.read_csv("\ANN\Churn_Modelling.csv")
 X = dataset.iloc[:,3:13]
 y = dataset.iloc[:,13]
 
